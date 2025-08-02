@@ -2,10 +2,10 @@ import psycopg2
 
 def get_db_connection():
     return psycopg2.connect(
-        dbname="myportfolio",
-        user="postgres",
-        password="At@290519*",
-        host="localhost",
+        dbname="myportfolio_rrko",
+        user="myportfolio_rrko_user",
+        password="5Sjii0xnVw8IRU2oxJ9Qg3jeD57YO1Aa",
+        host="dpg-d279gemuk2gs73dnf4p0-a",
         port="5432"
     )
 
