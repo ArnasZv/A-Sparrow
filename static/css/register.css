@@ -1,0 +1,340 @@
+body{
+    margin:0;
+    padding:0;
+    height: 100%;
+    background-color: black;
+    overflow-x: hidden;
+ 
+}
+
+/*heading navigation*/
+.main-nav{
+  display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+}
+
+.main-nav h1{
+   color: white;
+   position: relative;
+}
+
+.main-nav h1::after{
+    content: '';
+    position: absolute;
+    width: 69%;
+    height: 2px;
+    background-image: linear-gradient(to right, blue, purple);
+    bottom: 5px;
+    left: 0;
+    z-index: -1;
+
+}
+
+a{
+    border: 25px solid transparent;
+    text-decoration: none;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    max-width: 100vh;
+    align-items: center;
+    text-align: center;
+}
+
+
+.nav-button{
+    background: rgb(46, 45, 45);
+    border: none;
+    border-radius: 100px;
+    padding: 0.6em 2em;
+    margin-left: 20px;
+    position: relative;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.nav-button::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 2px;
+    border-radius: 100px;
+    background: red;
+    z-index: -1;
+    background-image: linear-gradient(to bottom right, blue, purple);
+
+}
+
+
+.nav-button:hover{
+    z-index: 0;
+    box-shadow: 40px 0 100px blue, -40px 0 100px purple;
+}
+/*End*/
+/*rgb line on nav*/
+@property --angle {
+    initial-value: 0deg;
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.main-section::after, .main-section::before{
+
+    content: '';
+    position: absolute;
+    background-image: conic-gradient(from var(--angle) ,red,orange,yellow,green,blue,indigo,violet, red);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    padding:0 5px 0 0;
+    animation: 15s spin linear infinite;
+}
+.main-section::before{
+    filter: blur(10px);
+    opacity: 0.5;
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+/*End rgb line on nav*/
+
+.main-section{
+    display: flex;
+    flex-direction: column;
+    background-position: center;
+    background-size: 60px 60px;
+    background-color: rgb(0, 0, 0);
+  background-image:
+    linear-gradient(to right, rgb(59, 59, 59) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(59, 59, 59) 1px, transparent 1px);
+    justify-content: center;
+    flex-direction: column;
+    align-items:center ;
+    height: 92vh;
+    max-height:100% ;
+    text-align: center;
+    position: relative;
+    padding-bottom: 2px;
+
+}
+
+.main-section > .main{
+    margin: 0 auto;
+    padding: 2em;
+    width: 300px;
+    background-color: rgba(48, 47, 47, 0.315);
+    background-position: center;
+    background-size: 60px 60px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;  
+    z-index: 1; 
+    overflow: hidden;
+}   
+
+.main > .main-background{
+    background: rgb(12, 12, 12);
+    width: 98%;
+    height: 98%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    translate: -50% -50%;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.main-section > .main::after, .main::before{
+    content: '';
+    position:absolute;
+    height: 150%;
+    width: 90%;
+   background-image: conic-gradient(from var(--angle),rgb(165, 108, 1),rgb(92, 16, 92),rgb(165, 108, 1));
+   top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -2;
+    border-radius: 10px;
+    animation: 5s rotate infinite linear;
+}
+
+.main::after{
+    filter: blur(10px);
+    opacity: 0.5;
+    inset: 10px;
+}
+
+@keyframes rotate{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+.main-section .main h1{
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: white;
+}
+
+hr{
+    margin: 30px 0;
+    border: none;
+    border-top: 1px solid white;
+}
+
+form input{
+    display: flex;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    color: white;
+    font-size: 1em;
+    outline: none;
+    justify-self: center;
+    align-self: center;
+}
+
+
+
+
+button.register-button {
+    background-color: #1ed760;
+    color: black;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.main-section a {
+    color: #1db954;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.login-link{
+    margin-top: 20px;
+}
+
+.login-link span{
+    color: #a7a7a7;
+}
+
+.footer-nav{
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    bottom: 0;
+    padding-top: 100px;
+    display: flex;
+    overflow: hidden;
+
+}
+
+.footer-nav ol {
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-nav p{
+    padding-top: 5px;
+    text-align: center;
+}
+.footer-nav a:hover{
+    color: red;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        gap: 10px;
+    }
+
+    .nav-button {
+        margin: 10px 0;
+        padding: 0.5em 1.5em;
+        width: 100%;
+        max-width: 250px;
+        font-size: 1em;
+    }
+
+    .main-section {
+        padding: 1em;
+        height: auto;
+    }
+
+    .main-section > .main {
+        width: 100%;
+        max-width: 90vw;
+        padding: 1.5em;
+    }
+
+    form input, 
+    button.register-button {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        text-align: center;
+        padding: 2em 1em;
+    }
+
+    .footer-nav ol {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+}

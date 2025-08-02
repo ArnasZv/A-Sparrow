@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Web Page</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/about-me.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/hamburger.css') }}">
+        <script src="{{ url_for('static', filename='js/main.js')}}" defer></script>
+        <script src="{{ url_for('static', filename='js/hamburger.js')}}" defer></script>
+    </head>
+    <body>
+    <header>
+        <div class="main-nav">
+        <h1>A-Sparrow</h1>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a class="button" href="{{url_for('home')}}">Home</a></li>
+                <li><a class="button" href="{{url_for('contact_me')}}">Contact Me</a></li>
+                <li><a class="button" href="{{url_for('login')}}">Login</a></li>
+                <li><a class="button" href="{{url_for('register')}}">Register</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+        <div class="intro-text">
+        <div class="intro-img">
+            <img src="{{ url_for('static', filename='img/IMG_1131.jpeg') }}" >
+        </div>
+        <h1>Hi, I'm Arnas Zvirblis</h1>
+        <div class="intro-p">
+        <p> I’m an enthusiastic and dedicated full-stack software developer in training, currently immersing myself in an intensive program at the Professional Academy at University College Dublin (UCD).
+            Driven by a passion for technology and creativity, I’m building a solid foundation in both front-end and back-end development. 
+            On the front end, I craft clean, responsive, and visually appealing interfaces using HTML, CSS, and JavaScript, always with a focus on delivering seamless and accessible user experiences. 
+            Behind the scenes, I’m developing strong skills in Python and SQL, enabling me to design scalable back-end systems and manage complex databases efficiently.<br><br>
+            My time at UCD has been transformative, deepening my understanding of modern development workflows, best practices, and collaborative project management. 
+            The hands-on training has sharpened my problem-solving abilities and instilled a mindset geared towards continuous learning and adaptability. 
+            I thrive in environments where I can combine creativity with technical rigor to build meaningful digital solutions.<br><br>
+            As I continue my journey, I’m excited to translate my growing expertise into real-world projects, contribute value to development teams, and evolve alongside the fast-paced world of technology. 
+            With each line of code, I aim to craft software that is not only functional but elegant, reliable, and impactful.</p>
+            </div>
+        </div>
+        <div class="last">
+            <a>To Access my full portfolio please <button class="last-button" href="{{url_for('register')}}">Register</button> or <button class="last-button" href="{{url_for('login')}}">Login</button> above<br>
+            To Collaborate get in contact via the <button class="last-button" href="{{url_for('contact_me')}}">Contact Me</button> above</a>
+        </div>
+        
+ <div class="footer-nav">
+            <nav>
+                
+                <ol>
+                <a href="{{url_for('home')}}">Home</a> | 
+                <a href="{{url_for('login')}}">Login</a> | 
+                <a href="{url_for('signup')}">Sign Up</a> |
+                <a href="{{url_for('about_me')}}">About Me</a> |
+                <a href="{{url_for('contact_me')}}">Contact Me</a>
+                </ol>
+                <p>&copy; 2025 A-Sparrow. All rights reserved</p>
+            </nav>
+        </div>
+
+</body>
+</html>

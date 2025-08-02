@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/contact-me.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/hamburger.css')}}">
+    <script src="{{url_for('static', filename='contact-me.js')}}" defer></script>
+    <script src="{{url_for('static', filename='hamburger.js')}}" defer></script>
+    <title>A-Sparrow</title>
+</head>
+<body>
+<header>
+     <div class="main-nav">
+        <h1>A-Sparrow</h1>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a class="nav-button" href="{{url_for('home')}}">Home</a></li>
+                <li><a class="nav-button" href="{{url_for('about_me')}}">About Me</a></li>
+                <li><a class="nav-button" href="{{url_for('login')}}">Login</a></li>
+                <li><a class="nav-button" href="{{url_for('register')}}">Register</a></li>
+            </ul>
+        </nav>
+        </div>
+</header>
+<div class="container">
+    <div class="contact-form">
+        <h2>Contact Me</h2>
+         {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class="flash-messages">
+            {% for message in messages %}
+               <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {%endif%}
+        {%endwith%}
+            <ul class="flashes"></ul>
+    
+        <form action="{{ url_for('contact') }}" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required><br>
+            <input type="email" name="email" placeholder="Your Email" required><br>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea><br>
+            <button type="submit">Send</button>
+        </form>
+        <div class="contact-background"></div>
+        </div>
+</div>
+
+
+
+<footer>
+ <div class="footer-nav">
+            <nav>
+                
+                <ol>
+                <a href="{{url_for('home')}}">Home</a> | 
+                <a href="{{url_for('login')}}">Login</a> | 
+                <a href="{url_for('signup')}">Sign Up</a> |
+                <a href="{{url_for('about_me')}}">About Me</a> |
+                <a href="{{url_for('contact_me')}}">Contact Me</a>
+                </ol>
+                <p>&copy; 2025 A-Sparrow. All rights reserved</p>
+            </nav>
+        </div>
+</footer>
+
+
+
+
+</body>
+</html>
